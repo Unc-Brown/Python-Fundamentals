@@ -27,7 +27,7 @@ elif a == "-":
                     d = float(input("Second number: "))
                     e = c - d
                     print(f"New Difference = {e}")
-                elif x == "No" or x == "no":
+                elif x == "No".lower():
                     print("Alright then, there you have it!")
                     break
         elif b == "No".lower():
