@@ -13,24 +13,24 @@ elif a == "-":
     print(f"Difference = {diff}")
     if diff<0:
         print("This is a negative number")
-        b = input("Do you wish to switch/change values? (Yes/No): ")
-        if b == "Yes".lower():
+        b = input("Do you wish to switch/change values? (Yes/No): ").lower()
+        if b == "yes":
             c = float(input("First number: "))
             d = float(input("Second number: "))
             e = c - d
             print(f"New Difference = {e}")
             while e < 0:
                 print("This is still a negative number")
-                x = input("Do you still wish to switch/change values again? (Yes/No): ")
-                if x == "Yes".lower():
+                x = input("Do you still wish to switch/change values again? (Yes/No): ").lower()
+                if x == "yes":
                     c = float(input("First number: "))
                     d = float(input("Second number: "))
                     e = c - d
                     print(f"New Difference = {e}")
-                elif x == "No".lower():
+                elif x == "no":
                     print("Alright then, there you have it!")
                     break
-        elif b == "No".lower():
+        elif b == "no":
             print("Okay then!")
 elif a == "*":
     num1 = float(input("First number: "))
@@ -38,23 +38,25 @@ elif a == "*":
     product = num1*num2
     print(f"Product = {product}")
 elif a == "/":
-    num1 = float(input("First number: "))
-    num2 = float(input("Second number: "))
-    while num2 == 0:
-        print(f"{num1} can not be divided by 0")
-        query = input("Do you wish to change numbers: ")
-        if query == "Yes".lower():
-            num1_ = float(input("First number: "))
-            num2_ = float(input("Second number: "))
-            division = num1_/num2_
-            modulus = num1_%num2_
-            if not modulus == 0:
-                print(f"{num1_}/{num2_} = {round(division)} remainder {modulus}")
+    while True:
+        num1 = float(input("First number: "))
+        num2 = float(input("Second number: "))
+        if num2 != 0:
+            division = num1 / num2
+            modulus = num1 % num2
+            if modulus != 0:
+                print(f"{num1}/{num2} = {division} remainder {modulus}")
             else:
-                print(f"{num1_}/{num2_} = {round(division)}")
-        if query == "No".lower():
-            print(f"Error: {num1} is not divisible by 0")
-        break
+                print(f"{num1}/{num2} = {division}")
+            break
+        else:
+            print(f"{num1} cannot be divided by 0")
+            choice = input("Do you wish to change numbers? (yes/no): ").lower()
+            if choice == "yes":
+                continue
+            else:
+                print(f"Error: {num1} is not divisible by 0")
+                break
 else:
     print("Invalid Operator!")
     print("Use a valid operator.")
