@@ -1,11 +1,6 @@
-import math
-
 #This is a calculator!
 print("BASIC CALCULATOR!!")
 a = input("Enter an operator sign; plus(+), minus(-), multiplication(*) or division(/): ")
-    # b = input("Enter an operator sign; plus(+), minus(-), multiplication(*) or division(/): ")
-    # if b != "+" or "-" or "/" or "*":
-    #     print("Dumbass!!")
 if a == "+":
     num1 = float(input("First number: "))
     num2 = float(input("Second number: "))
