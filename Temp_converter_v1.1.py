@@ -59,3 +59,5 @@ if Q1_input:
             print(f"{celsius:.1f}")
     elif not What_Unit:
         print("No input!")
+    else:
+        print("Invalid unit!")
