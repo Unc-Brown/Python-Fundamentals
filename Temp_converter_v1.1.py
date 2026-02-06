@@ -6,13 +6,13 @@ def fahrenheit_to_celsius(fahrenheit):
     celsius = (fahrenheit - 32)*(5/9)
     return celsius
 def celsius_to_kelvin(celsius):
-    kelvin = celsius + 273
+    kelvin = celsius + 273.15
     return kelvin
 def kelvin_to_celsius(kelvin):
-    celsius = kelvin - 273
+    celsius = kelvin - 273.15
     return celsius
 def fahrenheit_to_kelvin(fahrenheit):
-    kelvin = ((fahrenheit - 32)*(5/9)) + 273
+    kelvin = ((fahrenheit - 32)*(5/9)) + 273.15
     return kelvin
 def kelvin_to_fahrenheit(kelvin):
     fahrenheit = ((kelvin - 273)*(9/5)) + 32
@@ -26,7 +26,7 @@ except ValueError: Q1_input = None
 
 if Q1_input:
     What_Unit = input("Enter its unit | (K)elvin - (C)elsius - (F)ahrenheit: ").lower()
-    if What_Unit == "c" or "celsius":
+    if What_Unit == "c" or What_Unit == "celsius":
         query = input("To what unit | (K)elvin - (C)elsius - (F)ahrenheit: ").lower()
         if query == "kelvin" or query == "k":
             kelvin = celsius_to_kelvin(Q1_input)
@@ -39,7 +39,6 @@ if Q1_input:
     elif What_Unit == "k" or "kelvin":
         query = input("To what unit | (K)elvin - (C)elsius - (F)ahrenheit: ").lower()
         if query == "kelvin" or query == "k":
-            kelvin = celsius_to_kelvin(Q1_input)
             print("Already in converted unit!")
         elif query == "fahrenheit" or query == "f":
             fahrenheit = kelvin_to_fahrenheit(Q1_input)
